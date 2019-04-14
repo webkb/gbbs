@@ -1,0 +1,1 @@
+<?phprequire './setting.php';adminLoginCheck();unset($_SESSION['member']);setcookie('member_check', '', time()-3600);backreferer('退出成功');?>

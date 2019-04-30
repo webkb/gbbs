@@ -1,5 +1,6 @@
 <?php
 require './setting.php';
+adminLoginCheck();
 	$tid		= isset($_POST['tid'])		&& is_numeric($_POST['tid'])	? (int) $_POST['tid']							: 0;
 	$cid		= isset($_POST['cid'])		&& is_numeric($_POST['cid'])	? (int) $_POST['cid']							: 0;
 	$id			= isset($_POST['id'])		&& is_numeric($_POST['id'])		? (int) $_POST['id']							: null;

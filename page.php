@@ -49,7 +49,7 @@ loginCheck();
 				<a class="btn" href="write.php?id=<?php echo $id; ?>">编辑</a>
 	<?php else: ?>
 				<a class="btn" href="login.php">登录</a>
-				<a class="btn" href="reg_email.php">注册</a>
+				<a class="btn" href="reg.php">注册</a>
 	<?php endif; ?>
 			</div>
 		</div>
@@ -59,7 +59,7 @@ loginCheck();
 		</div>
 		<div class="main bfc"  style="color:#555;border-bottom:1px solid #dadada;margin:1rem auto">
 			<div class="left" style="color:#555;width:120px;">
-				<img src="http://bbs-static.smartisan.cn/uc_server/data/avatar/000/16/07/88_avatar_middle.jpg" /><br />
+				<img src="http://bbs-static.smartisan.com/uc_server/data/avatar/000/16/07/88_avatar_middle.jpg" /><br />
 				<?php echo $page->username; ?>
 			</div>
 			<div class="right" style="color:#555;width:120px;">
@@ -73,7 +73,7 @@ loginCheck();
 <?php foreach ($post as $item): ?>
 		<div class="main bfc post_item"  style="color:#555;border-bottom:1px solid #dadada;margin:1rem auto">
 			<div class="left" style="color:#555;width:120px;">
-				<img src="http://bbs-static.smartisan.cn/uc_server/data/avatar/000/16/07/88_avatar_middle.jpg" /><br />
+				<img src="http://bbs-static.smartisan.com/uc_server/data/avatar/000/16/07/88_avatar_middle.jpg" /><br />
 				<?php echo $item->username; ?>
 			</div>
 			<div class="right" style="color:#555;width:120px;">
@@ -88,7 +88,7 @@ loginCheck();
 <?php if (LOGIN_ID): ?>
 		<div class="main bfc post_item"  style="color:#555;border-bottom:1px solid #dadada;margin:1rem auto;">
 			<div class="left" style="color:#555;width:120px;">
-				<img src="http://bbs-static.smartisan.cn/uc_server/data/avatar/000/16/07/88_avatar_middle.jpg" />
+				<img src="http://bbs-static.smartisan.com/uc_server/data/avatar/000/16/07/88_avatar_middle.jpg" />
 			</div>
 			<div class="right" style="color:#555;width:120px;">
 				&nbsp;

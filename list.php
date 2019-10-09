@@ -46,7 +46,7 @@ loginCheck();
 				<a class="btn" href="logout.php">退出</a>
 	<?php else: ?>
 				<a class="btn" href="login.php">登录</a>
-				<a class="btn" href="reg_email.php">注册</a>
+				<a class="btn" href="reg.php">注册</a>
 	<?php endif; ?>
 <?php else: ?>
 	<?php if (LOGIN_ID): ?>

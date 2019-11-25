@@ -1,19 +1,20 @@
 <?php
 require './setting.php';
-adminLoginCheck();
-	$action = isset($_GET['action']) ? $_GET['action'] : '';
-	
+	adminLoginCheck();
+
+	$action = isset($_GET['action']) ? $_GET['action'] : null;
+
 	if (isset($_GET['id']) && is_numeric($_GET['id']) && $_GET['id'] > 0) {
 		$id = $_GET['id'];
 		$page = mysql_getrow("SELECT * FROM warm_page WHERE id=$id");
 		if (empty($page)){
 			backreferer('找不到对应的文章');
 		}
-		$gallery = explode(';',$page->gallery);
+		$gallery = explode(';', $page->gallery);
 		$cid = $page->cid;
 		$page_title = '编辑 ' . $page->title;
 		$navbar_id = $id;
-	} elseif (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && $_GET['id'] > 0) {
+	} elseif (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && $_GET['post_id'] > 0) {
 		$post_id = $_GET['post_id'];
 		$page = mysql_getrow("SELECT * FROM warm_post WHERE post_id=$post_id");
 		if (empty($page)){
@@ -64,20 +65,24 @@ adminLoginCheck();
 				<a class="btn" href="javascript:editor.sync();document.forms[0].submit()">保存</a>
 <?php if (isset($id)): ?>
 				<a class="btn" href="page.php?id=<?php echo $id; ?>" target="_blank">察看</a>
-<?php endif; ?>
-<?php if (isset($id)): ?>
 				<a class="btn" href="del.php?id=<?php echo $id; ?>">删除</a>
 <?php endif; ?>
 			</div>
 		</div>
 	</div>
 	<div class="main">
-		<form class="editform bfc" name="post" action="save.php" method="post" enctype="multipart/form-data">
+		<form class="editform bfc" name="post" action="save.php" method="post">
+<?php if (isset($action)): ?>
+			<input type="hidden" name="action" value="<?php echo $action;?>" />
+<?php endif; ?>
 <?php if (isset($cid)): ?>
 			<input type="hidden" name="cid" value="<?php echo $cid;?>" />
-<?php echo "\r\n"; endif; ?>
- <?php if (isset($id)): ?>
+<?php endif; ?>
+<?php if (isset($id)): ?>
 			<input type="hidden" name="id" value="<?php echo $id;?>" />
+<?php endif; ?>
+<?php if (isset($post_id)): ?>
+			<input type="hidden" name="post_id" value="<?php echo $post_id;?>" />
 <?php endif; ?>
 			<div class="title_content">
 			<h3></h3>

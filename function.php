@@ -15,7 +15,7 @@ function islogin() {
 	return stripos($_SERVER['PHP_SELF'], 'login.php');
 }
 
-function navbar($id = 0, $navbar = ''){
+function navbar($id = 0, $navbar = '') {
 	if (! $id) return $navbar;
 	$row = mysql_getrow("SELECT * FROM warm_page WHERE id=$id");
 	if ($row->type) {
@@ -23,7 +23,7 @@ function navbar($id = 0, $navbar = ''){
 	}
 	return navbar($row->cid, $navbar);
 }
-function navbar_url($id = 0, $navbar = ''){
+function navbar_url($id = 0, $navbar = '') {
 	if (! $id) return $navbar;
 	$row = mysql_getrow("SELECT * FROM warm_page WHERE id=$id");
 	if ($row->type) {
@@ -41,7 +41,7 @@ function getPostData() {
 		'cid',
 		'pid',
 		'type',
-		'company','address','tel','fax','zip','mail','contact','mobile','username'
+		'company','address','tel','fax','postcode','mail','contact','mobile','username'
 	);
 	$data = array();
 	if (! empty($_POST)) {//print_r($_POST);exit;
@@ -51,9 +51,7 @@ function getPostData() {
 		foreach ($filed as $f) {
 			if (isset($_POST[$f])) {
 				$v = db_real_escape_string($_POST[$f]);
-				if (! is_numeric($v)) {
-					$v = "'$v'";
-				}
+				$v = "'$v'";
 				$data[] = "`$f` = " . $v;
 			}
 		}

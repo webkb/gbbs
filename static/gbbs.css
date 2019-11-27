@@ -1,0 +1,17 @@
+.post_item {
+	color:#555;
+	border-bottom:1px solid #dadada;
+	margin:1rem auto;
+}
+.post_item .left {
+	color:#555;
+	width:120px;
+	text-align:center;
+}
+.post_item .right {
+	color:#555;
+	width:120px;
+}
+.post_item .acontent {
+	padding: 0 20px 20px 20px;
+}
